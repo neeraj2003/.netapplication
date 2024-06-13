@@ -8,9 +8,6 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: true
-- task: AzureWebApp@1
-  inputs:
-    #azureSubscription: 'gab-dotNetSP'
-    #appType: 'webAppLinux'
-    #appName: 'gab-webapp'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+
+- publish: '$(Build.ArtifactStagingDirectory)'
+  artifact: drop
